@@ -1,0 +1,33 @@
+<h1>JavaScript Homework</h1>
+	<p>Add the JavaScript code needed to enable auto-complete on this form.  Whenever the checkbox is checked, the code should automatically copy the values from Shipping Name and Shipping Zip into the Billing Name and Billing Zip.  If the checkbox is unchecked, the Billing Name and Billing Zip should go blank.</p>
+
+<form>
+	<fieldset>
+		<legend>Shipping Information</legend>
+			<label for="shippingName">Name: 
+				<input type="text" name="Name" id="shippingName" required />
+			</label> <br/>
+			<label for="shippingZip">Zip Code: 
+				<input type="text" name="Zip" id="shippingZip" pattern=[0-9]{5} required />
+			</label>
+	</fieldset>
+
+	<!-- Checkbox to see if Billing and Shipping are the same -->
+	<label for="same">
+		<input type="checkbox" id="same" name="same" onchange="billingCopy(this); billingCheck();" /> Same As Shipping?
+	</label> <br/> <br/>
+
+	<!-- Adding the Billing Information -->
+	<fieldset> 
+		<legend>Billing Information</legend>
+			<label for="billingName">Name: 
+				<input type="text" name="Name" id="billingName" required />
+			</label> <span id="name-alert"></span> <br/>
+			<label for="billingZip">Zip Code: 
+				<input type="text" name="Zip" id="billingZip" pattern=[0-9]{5} required />
+			</label> <span id="zip-alert"></span>
+	</fieldset>
+	
+	<!-- Adding The Submit Button -->
+	<input type="submit" value="Verify" />
+</form>
